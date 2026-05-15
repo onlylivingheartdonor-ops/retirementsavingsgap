@@ -99,8 +99,6 @@ const css = `
   }
 `
 
-import { RELATED_LINKS as RELATED } from "./lib/links"
-
 function fmtM(n) {
   if (Math.abs(n) >= 1000000) return "$" + (n / 1000000).toFixed(2) + "M"
   if (Math.abs(n) >= 1000) return "$" + Math.round(n).toLocaleString("en-US")
