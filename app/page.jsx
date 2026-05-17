@@ -255,15 +255,15 @@ export default function Page() {
 
           {ca > 0 && ra > ca && gl > 0 && (
             <>
-              <div className={`ret-result-hero ${onTrack ? "on-track" : "gap"}`}>
+              <div className={"ret-result-hero " + (onTrack ? "on-track" : "gap")}>
                 <p className="ret-result-label">{onTrack ? "Projected surplus" : "Savings gap"}</p>
-                <p className={`ret-result-val ${onTrack ? "green" : "amber"}`}>
+                <p className={"ret-result-val " + (onTrack ? "green" : "amber")}>
                   {onTrack ? "+" : "−"}{fmtM(Math.abs(gap))}
                 </p>
                 <p className="ret-result-sub">
                   {onTrack
-                    ? `You're on track — your projected ${fmtM(totalProjected)} exceeds your ${fmtM(gl)} goal by ${fmtM(Math.abs(gap))}.`
-                    : `Your projected ${fmtM(totalProjected)} falls short of your ${fmtM(gl)} goal. See the fixes below.`}
+                    ? "You're on track — your projected " + fmtM(totalProjected) + " exceeds your " + fmtM(gl) + " goal by " + fmtM(Math.abs(gap)) + "."
+                    : "Your projected " + fmtM(totalProjected) + " falls short of your " + fmtM(gl) + " goal. See the fixes below."}
                 </p>
               </div>
 
@@ -306,7 +306,7 @@ export default function Page() {
                     {milestones.map((m, i) => (
                       <div className="ret-milestone-row" key={i}>
                         <span className="ret-milestone-age">Age {m.age}</span>
-                        <span className="ret-milestone-label">{m.age === ra ? "Retirement" : `${m.age - ca} years from now`}</span>
+                        <span className="ret-milestone-label">{m.age === ra ? "Retirement" : (m.age - ca) + " years from now"}</span>
                         <div className="ret-milestone-bar-wrap">
                           <div className="ret-milestone-bar" style={{ width: m.pct + "%" }} />
                         </div>
@@ -329,11 +329,11 @@ export default function Page() {
                     <div className="ret-fix-cell">
                       <p className="ret-fix-label">Or retire later by</p>
                       <p className="ret-fix-val">
-                        {extraYears !== null ? `${extraYears} yr${extraYears !== 1 ? "s" : ""}` : "30+ yrs"}
+                        {extraYears !== null ? extraYears + " yr" + (extraYears !== 1 ? "s" : "") : "30+ yrs"}
                       </p>
                       <p className="ret-fix-sub">
                         {extraYears !== null
-                          ? `Retiring at age ${ra + extraYears} with your current savings rate would close the gap.`
+                          ? "Retiring at age " + (ra + extraYears) + " with your current savings rate would close the gap."
                           : "Gap too large to close by delaying retirement alone — consider increasing contributions."}
                       </p>
                     </div>
@@ -421,16 +421,16 @@ export default function Page() {
         {/* ========== MONEYWISE LINK — END ========== */}
 
         {/* RELATED */}
-        <div className="dr-card">
-          <p className="dr-section-title">Related tools</p>
-          <div className="dr-related-links">
+        <div className="ret-card">
+          <p className="ret-section-title">Related tools</p>
+          <div className="ret-related-links">
             {RELATED.map((r, i) => (
-              <a key={i} className="dr-related-link" href={r.href}>{r.label}</a>
+              <a key={i} className="ret-related-link" href={r.href}>{r.label}</a>
             ))}
           </div>
-          <div className="dr-disclaimer">
+          <div className="ret-disclaimer">
             This tool provides estimates for informational purposes only and does not constitute financial advice. Results assume a fixed interest rate and fixed monthly payment for the full repayment period. This site may use cookies and analytics. By using this site, you agree to our Privacy Policy and Terms of Service.
-            <div className="dr-footer-links">
+            <div className="ret-footer-links">
               <a href="/privacy">Privacy Policy</a>
               <a href="/terms">Terms of Service</a>
             </div>
