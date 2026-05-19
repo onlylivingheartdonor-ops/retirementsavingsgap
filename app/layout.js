@@ -4,7 +4,7 @@ export const metadata = {
   description: "Estimate your retirement savings gap and find out how much you need to save monthly to reach your retirement goal.",
   
   alternates: {
-    canonical: "https:/https://www.retirementsavingsgap.com",           // ← MUST CHANGE
+    canonical: "https://www.retirementsavingsgap.com",           // ← MUST CHANGE
   },
 
   openGraph: {
@@ -68,7 +68,22 @@ export default function RootLayout({ children }) {
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3475627763908800"
           crossOrigin="anonymous"
         ></script>
-      </head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              name: "retirement-savings-gap-calculator",
+              description: "Retirement savings gap calculator",
+              url: "https://www.retirementsavingsgap.com",
+              applicationCategory: "Finance",
+              operatingSystem: "All",
+              offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }
+            }),
+          }}
+        />
+    </head>
       <body>{children}</body>
     </html>
   );
@@ -78,7 +93,7 @@ export const metadata = {
   description: "Estimate your retirement savings gap and find out how much you need to save monthly to reach your retirement goal.",
   
   alternates: {
-    canonical: "https:/https://www.retirementsavingsgap.com",           // ← MUST CHANGE
+    canonical: "https://www.retirementsavingsgap.com",           // ← MUST CHANGE
   },
 
   openGraph: {
@@ -142,7 +157,22 @@ export default function RootLayout({ children }) {
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3475627763908800"
           crossOrigin="anonymous"
         ></script>
-      </head>
+              <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              name: "retirement-savings-gap-calculator",
+              description: "Retirement savings gap calculator",
+              url: "https://www.retirementsavingsgap.com",
+              applicationCategory: "Finance",
+              operatingSystem: "All",
+              offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }
+            }),
+          }}
+        />
+    </head>
       <body>{children}</body>
     </html>
   );
